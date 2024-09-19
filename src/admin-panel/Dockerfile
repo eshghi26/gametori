@@ -20,7 +20,7 @@ RUN npm run build --prod
 FROM nginx:alpine
 
 # Copy the built files from the previous stage to the Nginx directory
-COPY --from=build /app/dist/admin-panel /usr/share/nginx/html
+COPY --from=build /app/dist/admin-panel/* /usr/share/nginx/html/
 
 # Expose the port Nginx will run on (default 80)
 EXPOSE 80
